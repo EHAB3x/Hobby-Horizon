@@ -20,9 +20,9 @@ export const AuthProvider = ({children})=>{
 
         return ()=> unsub();
     },[])
-
+    console.log(user);
     return(
-        <AuthContext.Provider value={{isLoggedIn, user, login, logout}}>
+        <AuthContext.Provider value={{isLoggedIn, user}}>
             {children}
         </AuthContext.Provider>
     )

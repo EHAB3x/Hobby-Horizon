@@ -3,12 +3,13 @@ import loginPic from "../../assets/signin.png"
 import { FiFacebook } from "react-icons/fi";
 import { LiaApple } from "react-icons/lia";
 import { TbBrandGoogle } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { signIn } from "../../firebase/functions/signin";
 const Login = () => {
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
-
+    const navigate = useNavigate();
     const logMethods=[
         {name:"Facebook",svg: <FiFacebook size={24}/>},
         {name:"Icloud",svg: <LiaApple size={24}/>},
@@ -17,6 +18,7 @@ const Login = () => {
 
     const handleSignIn = (e)=>{
         e.preventDefault();
+        signIn(mail, password, navigate);
     }
   return (
     <div className="login">
