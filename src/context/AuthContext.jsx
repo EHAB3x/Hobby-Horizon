@@ -10,7 +10,7 @@ export const useAuth = ()=> useContext(AuthContext);
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({children})=>{
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
 
     useEffect(()=>{
         const unsub = onAuthStateChanged(auth, (user)=>{
@@ -20,7 +20,6 @@ export const AuthProvider = ({children})=>{
 
         return ()=> unsub();
     },[])
-    console.log(user);
     return(
         <AuthContext.Provider value={{isLoggedIn, user}}>
             {children}
