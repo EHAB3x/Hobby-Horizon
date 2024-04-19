@@ -58,7 +58,7 @@ const Login = () => {
                 />
 
                 <div className="login__methods">
-                    <p>Or sign in with</p>
+                    <p>Or sign in with:</p>
                     <div>
                         {logMethods.map((method, index)=>(
                             <Link to={`/${method.name}`} key={index}>

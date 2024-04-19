@@ -83,26 +83,6 @@
     text-align: center;
     position: relative;
 }
-.login__methods p::before,
-.login__methods p::after{
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background-color: var(--primary-color);
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-}
-.login__methods p::before{
-    left: -10px;
-}
-.login__methods p::after{
-    right: -10px;
-}
 .login__methods div{
     display: flex;
     justify-content: center;
@@ -117,7 +97,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: unset;
-        padding: 60px 0;
+    }
+    .login__left{
+        align-items: end;
+    }
+    .login__left,
+    .login__right{
+        flex-basis: unset;
+        width: 100%;
     }
 }
