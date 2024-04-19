@@ -8,19 +8,22 @@ import {
     IoConstructOutline, 
     IoTrophyOutline ,
     IoBonfireOutline,
-    IoBusinessOutline
+    IoBusinessOutline,
+    IoAppsOutline
 } from "react-icons/io5";
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
+import { useState } from 'react';
 const Navbar = () => {
     const {user} = useAuth();
+    const [showToggle, setShowToggle] = useState(false);
     console.log(user);
   return (
     <nav className="navbar">
         <div className="navbar__logo">
             <img src={logo} alt="logo" />
         </div>
-        <div className="navbar__links">
+        <div className={`navbar__links ${showToggle ? "show" : ""}`}>
             <ul>
                 <li>
                     <NavLink to="/">
@@ -69,6 +72,9 @@ const Navbar = () => {
                 <Link to="/register">Sign up</Link>
             </>
             }
+            <span className="toggle" onClick={()=> setShowToggle(!showToggle)}>
+                <IoAppsOutline size="24"/>
+            </span>
         </div>
     </nav>
   )

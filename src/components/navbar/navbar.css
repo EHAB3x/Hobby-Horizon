@@ -48,9 +48,6 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-.navbar__links ul li a {
-}
-
 .navbar__links ul li a.active {
     background-color: var(--primary-color);
     color: white;
@@ -59,6 +56,7 @@
 .navbar__btns{
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 .navbar__btns a{
     background-color: var(--primary-color);
@@ -113,4 +111,36 @@
 .navbar__btns button:hover{
     background-color:white ;
     color: var(--primary-color);
+}
+.navbar__btns .toggle{
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .navbar__links{
+        padding:20px 0;
+        position: fixed;
+        background-color: white;
+        left: -100%;
+        top: 100%;
+        width: 100%;
+        transition: .3s linear;
+        -webkit-transition: .3s linear;
+        -moz-transition: .3s linear;
+        -ms-transition: .3s linear;
+        -o-transition: .3s linear;
+    }
+    .navbar__links.show{
+        left: 0%;
+    }
+    .navbar__links ul{
+        flex-direction: column;
+    }
+    .navbar__btns .toggle{
+        display: unset;
+    }
+    
 }
