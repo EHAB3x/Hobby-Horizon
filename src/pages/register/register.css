@@ -1,0 +1,7 @@
+.form__account{
+    text-align: center;
+    color: #767676B5;
+}
+.form__account a{
+    color: var(--primary-color);
+}
