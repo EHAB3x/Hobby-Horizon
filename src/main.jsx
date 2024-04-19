@@ -8,6 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider>
     <HashRouter>
       <App />
-    </HashRouter>,
+    </HashRouter>
   </AuthProvider>
 )

@@ -1,0 +1,123 @@
+.login{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.login__left{
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login__right{
+    flex-basis: 50%;
+    background-color: var(--secondary-color);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 400;
+}
+.login__right form{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    gap: 25px;
+}
+.form__title{
+    color: white;
+    text-align: center;
+}
+.form__field{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.form__field label{
+    color: var(--primary-color);
+    font-weight: 400;
+}
+.form__field input{
+    height: 40px;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: var(--primary-color);
+    padding-left: 10px;
+}
+.form__field input::placeholder{
+    color: var(--primary-color);
+}
+.form__forget{
+    color: var(--primary-color);
+    text-align: end;
+}
+.login input[type="submit"]{
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    outline: none;
+    height: 40px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    cursor: pointer;
+}
+.login__methods{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.login__methods p{
+    text-align: center;
+    position: relative;
+}
+.login__methods p::before,
+.login__methods p::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.login__methods p::before{
+    left: -10px;
+}
+.login__methods p::after{
+    right: -10px;
+}
+.login__methods div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.login__methods div svg{
+    color: var(--primary-color);
+}
+@media screen and (max-width: 768px){
+    .login{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: unset;
+        padding: 60px 0;
+    }
+}
