@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { createContext, useContext, useEffect, useState } from "react";
+import { auth } from "../firebase/firebase";
 
 const AuthContext = createContext();
 
@@ -10,13 +12,17 @@ export const AuthProvider = ({children})=>{
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState({});
 
-    const login = (data)=>{
-        setIsLoggedIn(true);
-        setUser(data);
-    }
+    useEffect(()=>{
+        const unsub = onAuthStateChanged(auth, (user)=>{
+            setUser(user);
+            setIsLoggedIn(!isLoggedIn)
+        })
+
+        return ()=> unsub();
+    },[])
 
     return(
-        <AuthContext.Provider value={{isLoggedIn, user, login}}>
+        <AuthContext.Provider value={{isLoggedIn, user, login, logout}}>
             {children}
         </AuthContext.Provider>
     )
