@@ -98,8 +98,14 @@
         justify-content: center;
         align-items: center;
     }
+    .login form{
+        width: 50%;
+    }
     .login__left{
         align-items: end;
+    }
+    .login__right{
+        padding-bottom: 20px;
     }
     .login__left,
     .login__right{

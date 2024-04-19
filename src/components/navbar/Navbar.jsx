@@ -20,9 +20,9 @@ const Navbar = () => {
     console.log(user);
   return (
     <nav className="navbar">
-        <div className="navbar__logo">
+        <Link to="/" className="navbar__logo">
             <img src={logo} alt="logo" />
-        </div>
+        </Link>
         <div className={`navbar__links ${showToggle ? "show" : ""}`}>
             <ul>
                 <li>

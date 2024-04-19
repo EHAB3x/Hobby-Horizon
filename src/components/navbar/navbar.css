@@ -132,6 +132,8 @@
         -moz-transition: .3s linear;
         -ms-transition: .3s linear;
         -o-transition: .3s linear;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
     .navbar__links.show{
         left: 0%;
