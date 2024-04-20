@@ -17,7 +17,6 @@ import { useState } from 'react';
 const Navbar = () => {
     const {user} = useAuth();
     const [showToggle, setShowToggle] = useState(false);
-    console.log(user);
   return (
     <nav className="navbar">
         <Link to="/" className="navbar__logo">

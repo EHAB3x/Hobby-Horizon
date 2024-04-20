@@ -3,26 +3,28 @@ import './App.css'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Navbar from './components/navbar/Navbar'
+import Landing from './components/landing/Landing'
 
 function App() {
   return (
     <Routes>
       <Route path='/signin' element={
-      <>
-      <Navbar />
-      <Login />
-      </>
+        <>
+          <Navbar />
+          <Login />
+        </>
       }/>
       <Route path='/register' element={
         <>
-        <Navbar />
-        <Register />
+          <Navbar />
+          <Register />
         </>
       }/>
       <Route path='/' element={
         <>
-        <Navbar />
-      </>
+          <Navbar />
+          <Landing />
+        </>
       }/>
       <Route path='/hobbies' element={<Navbar />}/>
     </Routes>
