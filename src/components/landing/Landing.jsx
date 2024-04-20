@@ -22,7 +22,25 @@ const Landing = () => {
             </div>
             <span></span>
             <div className="right">
+                <div className="shapes">
+                    {[...Array(3)].map((_, rowIndex) => (
+                        <div key={rowIndex} className="row">
+                            {[...Array(3)].map((_, colIndex) => (
+                                <span key={colIndex}></span>
+                            ))}
+                        </div>
+                    ))}
+                </div>
                 <img src={landingImg} alt="landing-img" />
+                <div className="shapes shapes_2">
+                    {[...Array(3)].map((_, rowIndex) => (
+                        <div key={rowIndex} className="row">
+                            {[...Array(3)].map((_, colIndex) => (
+                                <span key={colIndex}></span>
+                            ))}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
