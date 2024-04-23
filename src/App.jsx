@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar'
 import Landing from './components/landing/Landing'
 import Categories from './components/categories/Categories'
 import Team from './components/team/Team'
+import Features from './components/features/Features'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Landing />
           <Categories />
           <Team />
+          <Features />
         </>
       }/>
       <Route path='/hobbies' element={<Navbar />}/>
