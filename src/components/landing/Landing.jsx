@@ -3,7 +3,6 @@ import './landing.css'
 import landingImg from "../../assets/landing_1.jfif";
 const Landing = () => {
     const {user} = useAuth();
-    console.log(user);
   return (
     <section className="landing">
         <div className="landing__welcome">

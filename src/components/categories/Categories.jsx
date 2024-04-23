@@ -5,7 +5,6 @@ import './categories.css'
 const Categories = () => {
     const {categories } = GetCategories()
     const navigate = useNavigate();
-    console.log(categories);
   return (
     <section className="categories">
         <section className="section__title">
