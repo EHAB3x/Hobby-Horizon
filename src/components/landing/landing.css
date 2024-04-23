@@ -37,6 +37,32 @@
     justify-content: space-around;
     color: white;
 }
+.landing__left-details h2{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.landing__left-button a{
+    background-color: white;
+    color: var(--primary-color);
+    padding: 15px 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    cursor: pointer;
+}
+.landing__left-button a:hover{
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid white;
+}
 .landing__content .right{
     height: 100%;
     display: flex;
@@ -84,32 +110,13 @@
     -o-border-radius: 50%;
 }
 
-.landing__left-button a{
-    background-color: white;
-    color: var(--primary-color);
-    padding: 15px 40px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border: 1px solid var(--primary-color);
-    transition: .3s ease-in-out;
-    -webkit-transition: .3s ease-in-out;
-    -moz-transition: .3s ease-in-out;
-    -ms-transition: .3s ease-in-out;
-    -o-transition: .3s ease-in-out;
-    cursor: pointer;
-}
-.landing__left-button a:hover{
-    background-color: var(--primary-color);
-    color: white;
-    border: 1px solid white;
-}
-
 @media screen  and (max-width: 768px){
     .landing__content{
         flex-direction: column-reverse;
+    }
+    .landing__left-details h2{
+        font-size: 30px;
+        margin-bottom: 10px;
     }
     .landing__content .right img{
         width: 90%;
