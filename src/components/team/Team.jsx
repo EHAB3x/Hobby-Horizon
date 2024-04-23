@@ -10,8 +10,8 @@ const Team = () => {
             <h2>meet our team</h2>
         </section>
         <section className="section__content">
-            {team.map((member, index)=>(
-                <div className="member" key={index}>
+            {team.map((member)=>(
+                <div className="member" key={member.id}>
                     <div className="card">
                         <div className="top">
                             <img src={member.img} alt="member-img" />
