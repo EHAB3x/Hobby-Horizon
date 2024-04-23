@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, query, onSnapshot } from 'firebase/firestore';
+import { collection, query, onSnapshot, orderBy } from 'firebase/firestore';
 import { db } from "../firebase";
 
 export const GetTeam = () => {
@@ -13,7 +13,7 @@ export const GetTeam = () => {
     }, []);
 
     const fetchData = (collectionName, setter) => {
-        const q = query(collection(db, collectionName));
+        const q = query(collection(db, collectionName),orderBy("id"));
         const unsubscribe = onSnapshot(q, (snap) => {
             const fetchedData = snap.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setter(fetchedData);
