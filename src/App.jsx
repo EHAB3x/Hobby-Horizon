@@ -4,6 +4,7 @@ import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Navbar from './components/navbar/Navbar'
 import Landing from './components/landing/Landing'
+import Categories from './components/categories/Categories'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <>
           <Navbar />
           <Landing />
+          <Categories />
         </>
       }/>
       <Route path='/hobbies' element={<Navbar />}/>
