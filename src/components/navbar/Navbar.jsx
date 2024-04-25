@@ -5,7 +5,6 @@ import { useAuth } from '../../context/AuthContext'
 import { 
     IoHomeOutline,
     IoBrushOutline, 
-    IoConstructOutline, 
     IoColorPaletteOutline ,
     IoBookOutline,
     IoWalkOutline,
@@ -22,13 +21,6 @@ const Navbar = () => {
     const {user} = useAuth();
     const [showToggle, setShowToggle] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
-
-    const scrollToCategories = () => {
-        const categoriesElement = document.getElementById("categories");
-        if (categoriesElement) {
-            categoriesElement.scrollIntoView({ behavior: "smooth" });
-        }
-    };
   return (
     <nav className="navbar">
         <Link to="/" className="navbar__logo">
@@ -43,10 +35,10 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <Link to="/" onClick={scrollToCategories}>
+                    <NavLink to="/hobbies">
                         <IoBrushOutline />
                         <span>Hobbies</span>    
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
                     <NavLink to="/reading">

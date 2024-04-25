@@ -6,3 +6,9 @@
   --secondary-color: #EEBDAE;
   background-color: #F5F5F5;
 }
+.hobby__page{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
