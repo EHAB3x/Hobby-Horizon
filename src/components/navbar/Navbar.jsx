@@ -6,13 +6,14 @@ import {
     IoHomeOutline,
     IoBrushOutline, 
     IoConstructOutline, 
-    IoTrophyOutline ,
-    IoBonfireOutline,
-    IoBusinessOutline,
+    IoColorPaletteOutline ,
+    IoBookOutline,
+    IoWalkOutline,
     IoAppsOutline,
     IoPersonSharp ,
     IoShieldCheckmark ,
-    IoEnterOutline
+    IoEnterOutline,
+    IoBicycleOutline
 } from "react-icons/io5";
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
@@ -48,27 +49,27 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <NavLink to="/events">
-                        <IoBonfireOutline />
-                        <span>Events</span>       
+                    <NavLink to="/reading">
+                        <IoBookOutline />
+                        <span>Reading</span>       
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/competitions">
-                        <IoTrophyOutline />
-                        <span>Competitions</span>
+                    <NavLink to="/painting">
+                        <IoColorPaletteOutline />
+                        <span>Painting</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/workshops">
-                        <IoConstructOutline />
-                        <span>Workshops</span>
+                    <NavLink to="/cycling">
+                        <IoBicycleOutline />
+                        <span>Cycling</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/clubs">
-                        <IoBusinessOutline />
-                        <span>Clubs</span>
+                    <NavLink to="/running">
+                        <IoWalkOutline />
+                        <span>Running</span>
                     </NavLink>
                 </li>
             </ul>

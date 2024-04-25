@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import WarningToast from '../../components/toasts/warning/WarningToast'
-import { useAuth } from '../../context/AuthContext'
 import './privacy.css'
 import { auth } from '../../firebase/firebase';
 import SuccessToast from '../../components/toasts/SuccessToast';
