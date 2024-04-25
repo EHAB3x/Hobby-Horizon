@@ -41,25 +41,25 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/reading">
+                    <NavLink to="/hobbies/reading">
                         <IoBookOutline />
                         <span>Reading</span>       
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/painting">
+                    <NavLink to="/hobbies/painting">
                         <IoColorPaletteOutline />
                         <span>Painting</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/cycling">
+                    <NavLink to="/hobbies/cycling">
                         <IoBicycleOutline />
                         <span>Cycling</span>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/running">
+                    <NavLink to="/hobbies/running">
                         <IoWalkOutline />
                         <span>Running</span>
                     </NavLink>

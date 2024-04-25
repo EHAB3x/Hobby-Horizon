@@ -5,6 +5,7 @@ import './categories.css'
 const Categories = () => {
     const {categories } = GetCategories()
     const navigate = useNavigate();
+    
   return (
     <section className="categories" id="categories">
         <section className="section__title">
@@ -22,7 +23,7 @@ const Categories = () => {
                                 <h3>{category.title}</h3>
                                 <p>{category.desc}</p>
                             </div>
-                            <button onClick={()=> navigate(category.link)}>
+                            <button onClick={()=> navigate(`/hobbies/${category.link}`)}>
                                 Explore Hobby
                             </button>
                         </div>

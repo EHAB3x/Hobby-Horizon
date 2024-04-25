@@ -3,14 +3,11 @@ import './App.css'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Navbar from './components/navbar/Navbar'
-import Landing from './components/landing/Landing'
 import Categories from './components/categories/Categories'
-import Team from './components/team/Team'
-import Features from './components/features/Features'
-import Footer from './components/footer/Footer'
 import Profile from './pages/profile/Profile'
 import Privacy from './pages/privacy/Privacy'
 import Home from './pages/home/Home'
+import HobbyPage from './pages/hobbyPage/HobbyPage'
 
 function App() {
   return (
@@ -34,9 +31,7 @@ function App() {
         }/>
 
         <Route path='/hobbies/:hobbyName' element={
-          <div className="hobby__page">
-            <Categories />
-          </div>
+          <HobbyPage />
         }/>
       </Routes>
     </>
