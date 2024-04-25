@@ -1,6 +1,7 @@
 import { useAuth } from '../../context/AuthContext'
 import './landing.css'
 import landingImg from "../../assets/landing_2.jfif";
+import { Link } from 'react-router-dom';
 const Landing = () => {
     const {user} = useAuth();
   return (
@@ -16,7 +17,7 @@ const Landing = () => {
                     <p>Here you can find your passion.</p>
                 </div>
                 <div className="landing__left-button">
-                    <a href="#categories">Explore Categories</a>
+                    <Link to="/hobbies">Explore Categories</Link>
                 </div>
             </div>
             <span></span>
