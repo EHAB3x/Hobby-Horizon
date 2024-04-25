@@ -22,7 +22,7 @@ const Register = () => {
             <h3 className="form__title">Create New Account</h3>
             <form>
                 <div className="form__field">
-                    <label htmlFor="email">User Name</label>
+                    <label htmlFor="txt">User Name</label>
                     <input 
                         type="text" 
                         name="txt" 
