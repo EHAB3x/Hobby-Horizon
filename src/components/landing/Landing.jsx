@@ -1,6 +1,6 @@
 import { useAuth } from '../../context/AuthContext'
 import './landing.css'
-import landingImg from "../../assets/landing_1.jfif";
+import landingImg from "../../assets/landing_2.jfif";
 const Landing = () => {
     const {user} = useAuth();
   return (
