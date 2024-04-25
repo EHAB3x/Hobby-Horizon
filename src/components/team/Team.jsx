@@ -3,7 +3,6 @@ import './team.css'
 
 const Team = () => {
     const { team } = GetTeam();
-    console.log(team);
   return (
     <section className="team">
         <section className="section__title">

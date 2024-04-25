@@ -21,6 +21,10 @@
     background-color: white;
 }
 
+.team .section__content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+}
 .team .section__content .member{
     display: flex;
     flex-direction: column;
@@ -41,7 +45,6 @@
 .team .section__content .member .card .top img{
     width: 180px;
     height: 180px;
-    
     object-fit: contain;
 }
 .team .section__content .member .card .bottom{
