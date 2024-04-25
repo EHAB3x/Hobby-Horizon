@@ -12,3 +12,31 @@
   justify-content: center;
   align-items: center;
 }
+.divider{
+  display: block;
+  width: 80%;
+  height: 5px;
+  background-color: var(--primary-color);
+  margin: 50px auto; 
+  position: relative;
+}
+.divider::before,
+.divider::after{
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  left: -15px;
+  top: -5px;
+}
+.divider::after{
+  right: -15px;
+  top: -5px;
+  left: unset;
+}

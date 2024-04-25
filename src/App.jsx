@@ -36,7 +36,9 @@ function App() {
           <>
             <HobbyPage />
             <HobbyTypes heading={"Events"}/>
+            <div className="divider"></div>
             <HobbyTypes heading={"Workshops"}/>
+            <div className="divider"></div>
             <HobbyTypes heading={"Competitions"}/>
           </>
         }/>
