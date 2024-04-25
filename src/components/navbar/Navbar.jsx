@@ -9,7 +9,10 @@ import {
     IoTrophyOutline ,
     IoBonfireOutline,
     IoBusinessOutline,
-    IoAppsOutline
+    IoAppsOutline,
+    IoPersonSharp ,
+    IoShieldCheckmark ,
+    IoEnterOutline
 } from "react-icons/io5";
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
@@ -17,6 +20,7 @@ import { useState } from 'react';
 const Navbar = () => {
     const {user} = useAuth();
     const [showToggle, setShowToggle] = useState(false);
+    const [showProfile, setShowProfile] = useState(false);
   return (
     <nav className="navbar">
         <Link to="/" className="navbar__logo">
@@ -64,12 +68,38 @@ const Navbar = () => {
         </div>
         <div className="navbar__btns">
             {user
-            ?<button onClick={()=>signOut(auth)}>Log out</button>
+            ?<div className="user__details">
+                <IoPersonSharp 
+                    className="user__details-icon" 
+                    size="24"
+                    onClick={()=> setShowProfile(!showProfile)}
+                />
+                <ul className={`user__details-nav ${showProfile ? "show" :""}`}>
+                    <li>
+                        <Link to={"/profile"}>
+                            <IoPersonSharp/>
+                            <span>Profile</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"/privacy"}>
+                            <IoShieldCheckmark />
+                            <span>Privacy</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <button onClick={()=> signOut(auth)}>
+                            <IoEnterOutline size={20}/>
+                            <span>Log out</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
             : 
-            <>
+            <div className="logged">
                 <Link to="/signin">Log in</Link>
-                <Link to="/register">Sign up</Link>
-            </>
+                <Link to="/register" className="register">Sign up</Link>
+            </div>
             }
             <span className="toggle" onClick={()=> setShowToggle(!showToggle)}>
                 <IoAppsOutline size="24"/>
