@@ -76,19 +76,22 @@ const Navbar = () => {
                 />
                 <ul className={`user__details-nav ${showProfile ? "show" :""}`}>
                     <li>
-                        <Link to={"/profile"}>
+                        <Link to={"/profile"} onClick={()=> setShowProfile(false)}>
                             <IoPersonSharp/>
                             <span>Profile</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/privacy"}>
+                        <Link to={"/privacy"} onClick={()=> setShowProfile(false)}>
                             <IoShieldCheckmark />
                             <span>Privacy</span>
                         </Link>
                     </li>
                     <li>
-                        <button onClick={()=> signOut(auth)}>
+                        <button onClick={()=> {
+                            signOut(auth)
+                            setShowProfile(false)
+                        }}>
                             <IoEnterOutline size={20}/>
                             <span>Log out</span>
                         </button>

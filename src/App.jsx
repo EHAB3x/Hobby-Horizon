@@ -8,34 +8,37 @@ import Categories from './components/categories/Categories'
 import Team from './components/team/Team'
 import Features from './components/features/Features'
 import Footer from './components/footer/Footer'
+import Profile from './pages/profile/Profile'
 
 function App() {
   return (
-    <Routes>
-      <Route path='/signin' element={
-        <>
-          <Navbar />
-          <Login />
-        </>
-      }/>
-      <Route path='/register' element={
-        <>
-          <Navbar />
-          <Register />
-        </>
-      }/>
-      <Route path='/' element={
-        <>
-          <Navbar />
-          <Landing />
-          <Categories />
-          <Team />
-          <Features />
-          <Footer />
-        </>
-      }/>
-      <Route path='/hobbies' element={<Navbar />}/>
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path='/signin' element={
+          <>
+            <Login />
+          </>
+        }/>
+        <Route path='/register' element={
+          <>
+            <Register />
+          </>
+        }/>
+        <Route path='/' element={
+          <>
+            <Landing />
+            <Categories />
+            <Team />
+            <Features />
+            <Footer />
+          </>
+        }/>
+        <Route path='/profile' element={
+          <Profile />
+        }/>
+      </Routes>
+    </>
   )
 }
 
