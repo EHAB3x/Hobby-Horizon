@@ -1,14 +1,11 @@
 .privacy{
-    height: 100vh;
-    display: flex;
-    align-items: end;
+    padding-top: 100px;
 }
 .privacy .content{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: calc(100vh - 72px);
 }
 .privacy .content h2{
     color: var(--primary-color);
