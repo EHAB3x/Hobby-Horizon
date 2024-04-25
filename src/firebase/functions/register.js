@@ -26,7 +26,7 @@ export const register = async (name, email, password, navigate) => {
         });
 
         // Show success message
-        SuccessToast("Account created successfully", navigate, "signin");
+        SuccessToast("Account created successfully", navigate, "/");
     } catch (error) {
         // Show error message
         ErrorToast(error.message);

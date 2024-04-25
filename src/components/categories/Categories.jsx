@@ -6,7 +6,7 @@ const Categories = () => {
     const {categories } = GetCategories()
     const navigate = useNavigate();
   return (
-    <section className="categories">
+    <section className="categories" id="categories">
         <section className="section__title">
             <h2>Explore Our Hobbies</h2>
         </section>

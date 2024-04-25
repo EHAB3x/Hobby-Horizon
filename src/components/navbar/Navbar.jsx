@@ -21,6 +21,13 @@ const Navbar = () => {
     const {user} = useAuth();
     const [showToggle, setShowToggle] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
+
+    const scrollToCategories = () => {
+        const categoriesElement = document.getElementById("categories");
+        if (categoriesElement) {
+            categoriesElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
   return (
     <nav className="navbar">
         <Link to="/" className="navbar__logo">
@@ -35,10 +42,10 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/hobbies">
+                    <Link to="/" onClick={scrollToCategories}>
                         <IoBrushOutline />
                         <span>Hobbies</span>    
-                    </NavLink>
+                    </Link>
                 </li>
                 <li>
                     <NavLink to="/events">

@@ -9,6 +9,7 @@ import Team from './components/team/Team'
 import Features from './components/features/Features'
 import Footer from './components/footer/Footer'
 import Profile from './pages/profile/Profile'
+import Privacy from './pages/privacy/Privacy'
 
 function App() {
   return (
@@ -20,11 +21,13 @@ function App() {
             <Login />
           </>
         }/>
+
         <Route path='/register' element={
           <>
             <Register />
           </>
         }/>
+
         <Route path='/' element={
           <>
             <Landing />
@@ -34,9 +37,12 @@ function App() {
             <Footer />
           </>
         }/>
+
         <Route path='/profile' element={
           <Profile />
         }/>
+
+        <Route path='/privacy' element={<Privacy />}/>
       </Routes>
     </>
   )
