@@ -8,6 +8,8 @@ import Profile from './pages/profile/Profile'
 import Privacy from './pages/privacy/Privacy'
 import Home from './pages/home/Home'
 import HobbyPage from './pages/hobbyPage/HobbyPage'
+import HobbyTypes from './components/hobbyTypes/HobbyTypes'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
@@ -31,9 +33,15 @@ function App() {
         }/>
 
         <Route path='/hobbies/:hobbyName' element={
-          <HobbyPage />
+          <>
+            <HobbyPage />
+            <HobbyTypes heading={"Events"}/>
+            <HobbyTypes heading={"Workshops"}/>
+            <HobbyTypes heading={"Competitions"}/>
+          </>
         }/>
       </Routes>
+      <Footer />
     </>
   )
 }
