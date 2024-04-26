@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './register.css'
 import { Link, useNavigate } from 'react-router-dom';
 import registerPic from "../../assets/signup.png"
 import { register } from '../../firebase/functions/register';
+import { useAuth } from '../../context/AuthContext';
 const Register = () => {
     const [name, setName] = useState("");
     const [mail, setMail] = useState("");
@@ -12,6 +13,18 @@ const Register = () => {
     const handleSignUp = (e)=>{
         e.preventDefault();
         register(name, mail, password, navigate);
+    }
+
+    const { user } = useAuth();
+    
+    useEffect(() => {
+        if (user !== null) {
+            navigate("/");
+        }
+    }, [user, navigate]);
+
+    if (user !== null) {
+        return null;
     }
   return (
     <div className="login">

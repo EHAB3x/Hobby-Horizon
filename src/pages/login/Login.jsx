@@ -4,8 +4,9 @@ import { FiFacebook } from "react-icons/fi";
 import { LiaApple } from "react-icons/lia";
 import { TbBrandGoogle } from "react-icons/tb";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signIn } from "../../firebase/functions/signin";
+import { useAuth } from "../../context/AuthContext";
 const Login = () => {
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,6 +20,17 @@ const Login = () => {
     const handleSignIn = (e)=>{
         e.preventDefault();
         signIn(mail, password, navigate);
+    }
+    const { user } = useAuth();
+    
+    useEffect(() => {
+        if (user !== null) {
+            navigate("/");
+        }
+    }, [user, navigate]);
+
+    if (user !== null) {
+        return null;
     }
   return (
     <div className="login">

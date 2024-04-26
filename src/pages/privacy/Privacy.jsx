@@ -8,9 +8,9 @@ import ErrorToast from '../../components/toasts/ErrorToast';
 import { useAuth } from '../../context/AuthContext';
 
 const Privacy = () => {
-    const { user } = useAuth();
-    const navigate = useNavigate();
     const [showWarning, setShowWarning] = useState(false);
+    const navigate = useNavigate();
+    const { user } = useAuth();
     
     useEffect(() => {
         if (user === null) {
