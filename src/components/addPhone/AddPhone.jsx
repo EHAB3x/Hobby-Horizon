@@ -6,6 +6,7 @@ import { updatePhone } from '../../firebase/functions/updatePhone';
 import ErrorToast from '../toasts/ErrorToast';
 import { useNavigate } from 'react-router-dom';
 import SuccessToast from '../toasts/SuccessToast';
+// eslint-disable-next-line react/prop-types
 const AddPhone = ({fetchStatus, fetchSetter}) => {
     const {user} = useAuth();
     const [phone, setPhone] = useState("");

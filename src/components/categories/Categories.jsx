@@ -3,7 +3,7 @@ import { GetCategories } from '../../firebase/functions/getCategories';
 import './categories.css'
 
 const Categories = () => {
-    const {categories } = GetCategories()
+    const { categories } = GetCategories()
     const navigate = useNavigate();
     
   return (

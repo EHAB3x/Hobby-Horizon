@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import WarningToast from '../../components/toasts/warning/WarningToast'
 import './privacy.css'
-import { auth } from '../../firebase/firebase';
+import { auth, db } from '../../firebase/firebase';
 import SuccessToast from '../../components/toasts/SuccessToast';
 import { useEffect, useState } from 'react';
 import ErrorToast from '../../components/toasts/ErrorToast';
 import { useAuth } from '../../context/AuthContext';
-
+import { doc, deleteDoc } from "firebase/firestore";
 const Privacy = () => {
     const [showWarning, setShowWarning] = useState(false);
     const navigate = useNavigate();
@@ -27,8 +27,9 @@ const Privacy = () => {
             {showWarning && <WarningToast 
                 style={{display:"none"}}
                 message={"Are you sure you want to delete this account?"}
-                func={()=>{
-                    auth.currentUser.delete()
+                func={async()=>{
+                    await deleteDoc(doc(db, "users", user.uid));
+                    await auth.currentUser.delete()
                     .then(() => {
                         // Account deleted successfully
                         SuccessToast("Account deleted successfully", navigate , "/")
@@ -38,6 +39,7 @@ const Privacy = () => {
                         ErrorToast(error)
 
                     });
+
                 }}
             />}
             <div className="content">

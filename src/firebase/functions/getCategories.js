@@ -3,10 +3,10 @@ import { collection, query, onSnapshot } from 'firebase/firestore';
 import { db } from "../firebase";
 
 export const GetCategories = () => {
-    const [categories, setSkills] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const unsubscribeCategories = fetchData("categories", setSkills);
+        const unsubscribeCategories = fetchData("categories", setCategories);
         return () => {
             unsubscribeCategories();
         };
