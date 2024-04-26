@@ -6,12 +6,22 @@ import {
     IoStopwatchOutline,
     IoCallOutline
 } from "react-icons/io5";
+import AddPhone from "../addPhone/AddPhone";
+import { useEffect, useState } from "react";
+import { getHobbyTypes } from "../../firebase/functions/getHobbyEvents";
+
 const ProfileDetails = () => {
     const {user} = useAuth();
+    const [userData, setUserData] = useState("");
     const date = new Date(user.metadata.creationTime);
     const month = date.toLocaleString('default', { month: 'short' });
     const year = date.getFullYear();
-    console.log(user);
+
+    useEffect(()=>{
+        getHobbyTypes("users",user.uid)
+        .then((res)=> setUserData(res))
+    },[user])
+    console.log(userData);
   return (
     <div className="profile__page">
         <svg className="profile__background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -23,18 +33,20 @@ const ProfileDetails = () => {
             </div>
             <div className="details">
                 <div className="heading">
-                    <h2>{user.displayName}</h2>
+                    <h2>{userData.displayName}</h2>
                     <p>Enthusiast</p>
                 </div>
 
                 <div className="body">
                     <p>
                         <IoMailOutline size="24"/>
-                        <span>{user.email}</span>
+                        <span>{userData.email}</span>
                     </p>
                     <p>
                         <IoCallOutline size="24"/>
-                        <span>{user.phoneNumber ? user.phoneNumber : "Not Provided"}</span>
+                        <span>{userData.phoneNumber 
+                        ? userData.phoneNumber 
+                        : <AddPhone />}</span>
                     </p>
 
                     <p>
