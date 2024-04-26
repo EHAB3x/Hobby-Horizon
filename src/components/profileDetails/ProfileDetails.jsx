@@ -13,6 +13,7 @@ import { getHobbyTypes } from "../../firebase/functions/getHobbyEvents";
 const ProfileDetails = () => {
     const {user} = useAuth();
     const [userData, setUserData] = useState("");
+    const [refetch, setRefetch] = useState(false);
     const date = new Date(user.metadata.creationTime);
     const month = date.toLocaleString('default', { month: 'short' });
     const year = date.getFullYear();
@@ -20,7 +21,7 @@ const ProfileDetails = () => {
     useEffect(()=>{
         getHobbyTypes("users",user.uid)
         .then((res)=> setUserData(res))
-    },[user])
+    },[user, refetch])
     console.log(userData);
   return (
     <div className="profile__page">
@@ -46,7 +47,7 @@ const ProfileDetails = () => {
                         <IoCallOutline size="24"/>
                         <span>{userData.phoneNumber 
                         ? userData.phoneNumber 
-                        : <AddPhone />}</span>
+                        : <AddPhone fetchStatus={refetch} fetchSetter={setRefetch}/>}</span>
                     </p>
 
                     <p>
