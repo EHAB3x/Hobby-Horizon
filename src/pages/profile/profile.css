@@ -1,12 +1,16 @@
 .profile{
     padding-top: 100px;
+    position: relative;
+    height: calc(100vh - 310px);
+}
+.profile__page{
     width: 85%;
     margin: 0 auto;
 }
 .profile .profile__background{
     position: absolute;
     width: 100%;
-    bottom: 0px;
+    bottom: -1px;
     left: 0;
     z-index: -1;
 }
@@ -53,8 +57,22 @@
 }
 
 @media screen and (max-width:768px){
+    .profile{
+        height: unset;
+    }
+    .profile .user__information{
+        flex-direction: column;
+    }
+    .profile .user__information .img{
+        display: flex;
+        justify-content: center;
+    }
+    .profile .user__information .img img{
+        width: 50%;
+    }
     .profile .user__information .details .heading{
-        margin-bottom: 30px;
+        margin: 30px 0;
+        text-align: center;
     }
     .profile .user__information .details .heading h2{
         margin-top: 0;

@@ -40,6 +40,7 @@ function App() {
             <HobbyTypes heading={"Workshops"}/>
             <div className="divider"></div>
             <HobbyTypes heading={"Competitions"}/>
+            <div style={{marginBottom:"50px"}}></div>
           </>
         }/>
       </Routes>
