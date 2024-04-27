@@ -9,11 +9,13 @@ import {
 import AddPhone from "../addPhone/AddPhone";
 import { useEffect, useState } from "react";
 import { getHobbyTypes } from "../../firebase/functions/getHobbyEvents";
+import { updateProfilePhoto } from "../../firebase/functions/updatePhotoProfile";
 
 const ProfileDetails = () => {
     const {user} = useAuth();
     const [userData, setUserData] = useState("");
     const [refetch, setRefetch] = useState(false);
+    const [image, setImage] = useState(null);
     const date = new Date(user.metadata.creationTime);
     const month = date.toLocaleString('default', { month: 'short' });
     const year = date.getFullYear();
@@ -30,7 +32,17 @@ const ProfileDetails = () => {
         </svg>
         <div className="user__information">
             <div className="img">
-                <img src={profile} alt="profile-img" />
+                <img src={userData.photoURL ? userData.photoURL : profile} alt="profile-img" />
+                <label htmlFor="image">Change photo</label>
+                <input 
+                    type="file" 
+                    name="image" 
+                    id="image" 
+                    onChange={(e)=> setImage(e.target.files[0])}
+                />
+                {image && <button onClick={()=> updateProfilePhoto(image, user, setUserData)}>
+                    Change Now
+                </button>}
             </div>
             <div className="details">
                 <div className="heading">
