@@ -11,6 +11,7 @@ import HobbyPage from './pages/hobbyPage/HobbyPage'
 import HobbyTypes from './components/hobbyTypes/HobbyTypes'
 import Footer from './components/footer/Footer'
 import Forget from './pages/forgetPassword/Forget'
+import TypePage from './pages/typePage/TypePage'
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             <div style={{marginBottom:"50px"}}></div>
           </>
         }/>
+
+        <Route path='/hobbies/:hobbyName/:hobbyType/:hobbyId' element={<TypePage />}/>
+        
       </Routes>
       <Footer />
     </>
