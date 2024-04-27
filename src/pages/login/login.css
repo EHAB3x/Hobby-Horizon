@@ -36,6 +36,19 @@
     display: flex;
     flex-direction: column;
     gap: 7px;
+    position: relative;
+}
+.form__field svg{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    color: var(--primary-color);
+    cursor: pointer;
 }
 .form__field label{
     color: white;

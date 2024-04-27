@@ -4,10 +4,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import registerPic from "../../assets/signup.png"
 import { register } from '../../firebase/functions/register';
 import { useAuth } from '../../context/AuthContext';
+import { 
+    IoEye,
+    IoEyeOff
+} from "react-icons/io5";
+
 const Register = () => {
     const [name, setName] = useState("");
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate();
 
     const handleSignUp = (e)=>{
@@ -57,14 +63,18 @@ const Register = () => {
                 </div>
 
                 <div className="form__field">
+                    {showPassword 
+                    ? <IoEyeOff size="20" onClick={()=> setShowPassword(false)}/> 
+                    :<IoEye size="20" onClick={()=> setShowPassword(true)}/>}
                     <label htmlFor="pass">Password</label>
                     <input 
-                        type="password" 
+                        type={showPassword ?"text" :"password"} 
                         name="pass" 
                         id="pass"
                         placeholder="*****"
                         onChange={(e)=> setPassword(e.target.value)}
                     />
+                    <Link to={"/forget"} className="form__forget">Forget password?</Link>
                 </div>
 
                 <input 

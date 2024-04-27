@@ -5,7 +5,10 @@ import loginPic from "../../assets/signin.png"
 import { FiFacebook } from "react-icons/fi";
 import { LiaApple } from "react-icons/lia";
 import { TbBrandGoogle } from "react-icons/tb";
-
+import { 
+    IoEye,
+    IoEyeOff
+} from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
@@ -16,6 +19,7 @@ import { useAuth } from "../../context/AuthContext";
 const Login = () => {
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate();
 
     const logMethods=[
@@ -59,9 +63,12 @@ const Login = () => {
                 </div>
 
                 <div className="form__field">
+                    {showPassword 
+                    ? <IoEyeOff size="20" onClick={()=> setShowPassword(false)}/> 
+                    :<IoEye size="20" onClick={()=> setShowPassword(true)}/>}
                     <label htmlFor="pass">Password</label>
                     <input 
-                        type="password" 
+                        type={showPassword ?"text" :"password"} 
                         name="pass" 
                         id="pass"
                         placeholder="*****"
