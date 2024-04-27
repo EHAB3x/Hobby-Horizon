@@ -10,6 +10,7 @@ import Home from './pages/home/Home'
 import HobbyPage from './pages/hobbyPage/HobbyPage'
 import HobbyTypes from './components/hobbyTypes/HobbyTypes'
 import Footer from './components/footer/Footer'
+import Forget from './pages/forgetPassword/Forget'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/signin' element={<Login />}/>
+
+        <Route path='/forget' element={<Forget />}/>
 
         <Route path='/register' element={<Register />}/>
 
