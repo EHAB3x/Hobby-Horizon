@@ -1,18 +1,31 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './typePage.css'
 import { useEffect, useState } from 'react';
 import { getHobbyTypes } from '../../firebase/functions/getHobbyEvents';
+import { useAuth } from '../../context/AuthContext';
 
 const TypePage = () => {
+    const {user} = useAuth();
     const {hobbyId} = useParams();
     const [event, setEvent] = useState({});
+    const navigate = useNavigate();
     useEffect(()=>{
         getHobbyTypes("reading","events")
         .then(res=> {
             let targetEvent = res.events.filter((event)=> event.id == hobbyId)[0];
             setEvent(targetEvent)
         })
-    },[hobbyId, event])
+    },[hobbyId, event]);
+
+    useEffect(() => {
+        if (user === null) {
+            navigate("/signin");
+        }
+    }, [user, navigate]);
+
+    if (user === null) {
+        return null;
+    }
   return (
     <div className="type__page">
         <div className="type__page-content">
